@@ -1,0 +1,9 @@
+<div class="face-snap-card" [ngClass]="{snap : faceSnap.snaps >= 10}">
+    <h2>{{faceSnap.id }} {{ faceSnap.titre | titlecase}}</h2>
+    <p>Mis en ligne le {{ faceSnap.dateCreation | date: 'le d MMMM yyyy' }}</p>
+    <p>{{ faceSnap.description }}</p>
+    <button class="btn btn-primary m-2" (click)="onAddSnap()">Oh Snap</button>
+    <button class="btn btn-danger m-2" (click)="onNoSnap()">No Snap</button>
+    <span [ngStyle]="{ color: 'rgb(0, ' + faceSnap.snaps + ', 0)' }">🤌 {{ faceSnap.snaps | currency : 'EUR' }}</span>
+    <img [src]="faceSnap.imageUrl" [alt]="faceSnap.titre" width="150" height="150">
+</div>
