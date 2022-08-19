@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { interval, map } from 'rxjs';
 
 @Component({
   selector: 'app-landing-page',
