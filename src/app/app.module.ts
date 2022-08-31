@@ -3,32 +3,30 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FaceSnapComponent } from './face-snap/face-snap.component';
-import { FaceSnapListComponent } from './face-snap-list/face-snap-list.component';
-import { HeaderComponent } from './header/header.component';
-import { LandingPageComponent } from './landing-page/landing-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormTemplateComponent } from './form-template/form-template.component';
-import { FormReactifComponent } from './form-reactif/form-reactif.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CoreModule } from './core/core.module';
+import { FaceSnapsModule } from './face-snaps/face-snaps.module';
+import { LandingPageModule } from './landing-page/landing-page.module';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FaceSnapComponent,
-    FaceSnapListComponent,
-    HeaderComponent,
-    LandingPageComponent,
     FormTemplateComponent,
-    FormReactifComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
-  ],
-  providers: [
-    //{ provide: LOCALE_ID, useValue: 'fr-FR'}
+    ReactiveFormsModule,
+    HttpClientModule,
+    CoreModule,
+    FaceSnapsModule,
+    LandingPageModule,
+    AuthModule
+  
   ],
   bootstrap: [AppComponent]
 })

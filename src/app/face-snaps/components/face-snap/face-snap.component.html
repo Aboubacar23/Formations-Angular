@@ -1,0 +1,6 @@
+<div class="face-snap-card" [ngClass]="{snap : faceSnap.snaps >= 10}">
+    <h2>{{faceSnap.id }} {{ faceSnap.title | titlecase}}</h2>
+    <p>Mis en ligne le {{ faceSnap.createdDate | date: 'le d MMMM yyyy' }}</p>
+    <p>{{ faceSnap.description }}</p>
+    <a class="btn btn-warning btn-sm mt-4" (click)="onViewFaceSnap()">Détails</a>
+</div>

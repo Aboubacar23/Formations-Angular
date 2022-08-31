@@ -1,0 +1,21 @@
+import { HttpEvent, HttpHandler, HttpHeaders, HttpInterceptor, HttpRequest } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
+import { AuthService } from "../service/auth.service";
+
+
+@Injectable()
+export class AuthIntercepteur implements HttpInterceptor{
+    constructor(
+        private authService : AuthService
+    ){
+
+    }
+    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+        const headers = new HttpHeaders()
+            .append('authorization', `Conde ${this.authService.getToken()}`);
+        const modified = req.clone({ headers });
+    
+        return next.handle(modified);
+    }
+}
